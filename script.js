@@ -6,7 +6,7 @@ function next() {
   document.getElementById("p" + page).classList.add("active");
 }
 
-/* COUNTDOWN */
+/* COUNTDOWN TO 18 JAN */
 function countdown() {
   const now = new Date();
   let target = new Date(now.getFullYear(), 0, 18, 0, 0, 0);
@@ -15,19 +15,19 @@ function countdown() {
   setInterval(() => {
     const diff = target - new Date();
     document.getElementById("h").innerText =
-      String(Math.floor(diff / 3600000)).padStart(2, "0");
+      String(Math.floor(diff / 3600000)).padStart(2,"0");
     document.getElementById("m").innerText =
-      String(Math.floor(diff / 60000) % 60).padStart(2, "0");
+      String(Math.floor(diff / 60000) % 60).padStart(2,"0");
     document.getElementById("s").innerText =
-      String(Math.floor(diff / 1000) % 60).padStart(2, "0");
+      String(Math.floor(diff / 1000) % 60).padStart(2,"0");
   }, 1000);
 }
 countdown();
 
 /* CAKE CUT */
 function cutCake() {
-  for (let i = 0; i < 25; i++) {
-    let c = document.createElement("div");
+  for (let i = 0; i < 30; i++) {
+    const c = document.createElement("div");
     c.className = "cracker";
     c.style.left = "50%";
     c.style.top = "50%";
